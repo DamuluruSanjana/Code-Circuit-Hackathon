@@ -1,0 +1,229 @@
+/* Card flip animation */
+.card {
+    perspective: 1000px;
+    transition: transform 0.6s;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 350px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.75;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+}
+
+/* Card content styling */
+.card-content {
+    max-width: 90%;
+    word-wrap: break-word;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Flip indicator */
+.flip-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.875rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flip-indicator svg {
+    width: 20px;
+    height: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Button hover effects */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Review buttons styling */
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.difficulty-button {
+    padding: 0.75rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.difficulty-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dashboard stats cards */
+.stats-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Chart container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Card hover effect */
+.flashcard {
+    transition: all 0.3s ease;
+}
+
+.flashcard:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Review card styles */
+.review-card {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Review completion stats */
+.review-complete {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+/* Incorrect cards list */
+.incorrect-cards {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fee2e2;
+    border-radius: 0.5rem;
+}
+
+.incorrect-card-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+} 
