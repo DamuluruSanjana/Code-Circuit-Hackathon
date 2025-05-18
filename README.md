@@ -1,4 +1,4 @@
-# Code-Circuit-Hackathon
+# Code-Circuit-Hackathon Project-1
 # FlashMaster - Smart Flashcard Web App
 
 A modern flashcard application built with React and TailwindCSS that helps you master any subject through spaced repetition learning.
